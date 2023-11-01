@@ -27,6 +27,10 @@
                     id="pdc"
                     src="assets/pdc.glb"
                 ></a-asset-item>
+                <a-asset-item
+                    id="lect2"
+                    src="assets/lect2.glb"
+                ></a-asset-item>
             </a-assets>
 
             <a-marker
@@ -63,6 +67,25 @@
                     scale="0.00856091417322267 0.00856091417322267 0.00856091417322267"
                     animation-mixer="loop: repeat"
                     gltf-model="#pdc"
+                    class="clickable"
+                    gesture-handler
+                ></a-entity>
+            </a-marker>
+            <a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="assets/lect2.patt"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-entity
+                    id="bowser-model"
+                    scale="0.056549510015270046 0.056549510015270046 0.056549510015270046"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#lect2"
                     class="clickable"
                     gesture-handler
                 ></a-entity>
