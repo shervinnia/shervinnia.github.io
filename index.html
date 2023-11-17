@@ -8,7 +8,7 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
     </head>
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) for site analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1YQHLZ6CK8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,7 +17,7 @@
     
       gtag('config', 'G-1YQHLZ6CK8');
     </script>
-
+    <!-- end google tag -->
 
     <body style="margin: 0; overflow: hidden;">
         <a-scene
@@ -29,6 +29,12 @@
             embedded
             gesture-detector
         >
+            <!-- Below section imports the glb models, one can be copy-pasted to import more.
+                    - "id" is the identifier to call it in the marker further below
+                    - "src" is the directory the glb file is located in relative to this file.
+                        by default, AR.js studio will place it in "assets/asset.glb", but this
+                        file name should be changed if you want to add more models.
+            -->
             <a-assets>
                 <a-asset-item
                     id="gfp"
@@ -46,11 +52,18 @@
                     id="atpsyn"
                     src="assets/atpsyn.glb"
                 ></a-asset-item>
-                
-                
-
             </a-assets>
-
+            <!-- Below section sets the markers to be used, and assigns each model to its marker.
+                 Each marker has an id and a directory for its associated .patt file. Each model
+                 has a scaling factor (to make it the proper size to fit on its marker) and the id
+                 of its model, which was set above.
+                
+                 To add a new model, copy paste a full "a-marker" section including its
+                 associated "a-entity" section. Change the id names and experiment with scaling
+                 factors. Personally, I like to use AR.js studio to automatically make a scaling
+                 factor for me, or at least get me into the right order of magnitude. It does take
+                 more work than if you already knew the scaling factor, but it is faster than
+                 experimenting from scratch, from my experience. -->
             <a-marker
                 id="gfppattern"
                 type="pattern"
